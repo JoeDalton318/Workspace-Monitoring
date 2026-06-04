@@ -1,4 +1,4 @@
-import { MonitoringEvent } from '../monitoring/eventTypes';
+import type { MonitoringEvent } from '../monitoring/eventTypes';
 
 /**
  * EN: Interface for all event storage adapters.

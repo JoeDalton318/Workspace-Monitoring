@@ -1,5 +1,5 @@
-import { EventStore } from './eventStore';
-import { MonitoringEvent } from '../monitoring/eventTypes';
+import type { EventStore } from './eventStore';
+import type { MonitoringEvent } from '../monitoring/eventTypes';
 
 /**
  * EN: In-memory storage adapter. Ideal for tests or non-persistent mode.

@@ -1,4 +1,4 @@
-import { MonitoringEvent } from './eventTypes';
+import type { MonitoringEvent } from './eventTypes';
 
 type EventHandler = (event: MonitoringEvent) => void;
 

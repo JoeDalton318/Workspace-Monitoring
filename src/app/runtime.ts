@@ -3,7 +3,7 @@ import { eventBus } from '../monitoring/eventBus';
 import { LocalStorageStore } from '../storage/localStorageStore';
 import { IndexedDbStore } from '../storage/indexedDbStore';
 import { MemoryStore } from '../storage/memoryStore';
-import { EventStore } from '../storage/eventStore';
+import type { EventStore } from '../storage/eventStore';
 import { configManager } from '../config';
 import { demoController } from '../demo/demoController';
 

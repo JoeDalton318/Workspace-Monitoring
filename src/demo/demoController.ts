@@ -1,7 +1,7 @@
 import { configManager } from '../config';
 import { sessionTracker } from '../monitoring/sessionTracker';
 import { simulator } from './simulator';
-import { DemoPattern } from './fixtures';
+import type { DemoPattern } from './fixtures';
 
 /**
  * EN: High-level controller for demo mode interactions.

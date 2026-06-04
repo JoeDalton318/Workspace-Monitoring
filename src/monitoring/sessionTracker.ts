@@ -1,5 +1,5 @@
 import { eventBus } from './eventBus';
-import { MonitoringEvent, EventType, EventSource } from './eventTypes';
+import type { MonitoringEvent, EventType, EventSource } from './eventTypes';
 import { getTabState } from './tabState';
 import { visibilityMonitor } from './visibilityMonitor';
 import { configManager } from '../config';

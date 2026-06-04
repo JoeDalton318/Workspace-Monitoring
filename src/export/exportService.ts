@@ -1,4 +1,4 @@
-import { MonitoringEvent } from '../monitoring/eventTypes';
+import type { MonitoringEvent } from '../monitoring/eventTypes';
 import { generateJsonExport } from './jsonExport';
 import { generateCsvExport } from './csvExport';
 import { configManager } from '../config';

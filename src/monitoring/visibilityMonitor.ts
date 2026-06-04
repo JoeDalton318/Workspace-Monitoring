@@ -1,5 +1,4 @@
 import { configManager } from '../config';
-import { getTabState } from './tabState';
 
 type VisibilityChangeCallback = (type: 'visibilitychange' | 'pagehide' | 'beforeunload') => void;
 

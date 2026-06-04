@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MonitoringEvent } from '../../monitoring/eventTypes';
+import type { MonitoringEvent } from '../../monitoring/eventTypes';
 import { eventBus } from '../../monitoring/eventBus';
 import { runtime } from '../../app/runtime';
 

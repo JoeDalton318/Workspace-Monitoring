@@ -1,5 +1,5 @@
 import { sessionTracker } from '../monitoring/sessionTracker';
-import { PATTERNS, DemoPattern } from './fixtures';
+import { PATTERNS, type DemoPattern } from './fixtures';
 import { configManager } from '../config';
 
 /**

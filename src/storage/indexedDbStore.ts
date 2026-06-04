@@ -1,5 +1,5 @@
-import { EventStore } from './eventStore';
-import { MonitoringEvent } from '../monitoring/eventTypes';
+import type { EventStore } from './eventStore';
+import type { MonitoringEvent } from '../monitoring/eventTypes';
 // import { configManager } from '../config';
 
 const DB_NAME = 'WorkspaceMonitoringDB';

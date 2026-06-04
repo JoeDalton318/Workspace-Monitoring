@@ -1,4 +1,4 @@
-import { AppConfig } from './schema';
+import type { AppConfig } from './schema';
 import { defaultConfig } from './defaults';
 
 /**

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dashboard } from './ui/pages/Dashboard';
 
 function App() {
