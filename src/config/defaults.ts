@@ -1,0 +1,41 @@
+import { AppConfig } from './schema';
+
+/**
+ * EN: Default configuration values.
+ * FR: Valeurs de configuration par défaut.
+ */
+export const defaultConfig: AppConfig = {
+  monitoring: {
+    enabled: true,
+    pollIntervalMs: 1000,
+    capturePageHide: true,
+    captureBeforeUnload: true,
+    deduplicateTransitions: true,
+  },
+  storage: {
+    adapter: 'memory',
+    maxEvents: 10000,
+    persistEvents: true,
+  },
+  export: {
+    enabled: true,
+    formats: ['json', 'csv'],
+  },
+  demo: {
+    enabled: false,
+    autoSimulate: false,
+    defaultPattern: 'random',
+  },
+  ui: {
+    theme: 'system',
+    showRawEvents: false,
+    maxTimelineItems: 100,
+  },
+  logging: {
+    level: 'info',
+  },
+  app: {
+    name: 'Workspace Monitoring',
+    environment: 'development',
+  },
+};
