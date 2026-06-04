@@ -4,8 +4,11 @@ EN: The application is composed of several key modules:
 FR: L'application est composée de plusieurs modules clés :
 
 ## EN: Monitoring Core / FR: Cœur de Monitoring
-- **tabState.ts**: EN: Safely extracts `document.visibilityState` / FR: Extrait `document.visibilityState` en toute sécurité.
-- **visibilityMonitor.ts**: EN: Listens to browser events. / FR: Écoute les événements du navigateur.
+- **visibilityMonitor.ts**: EN: Listens to basic browser visibility events. / FR: Écoute les événements basiques de visibilité du navigateur.
+- **focusMonitor.ts**: EN: Listens to window focus/blur. / FR: Écoute le focus/blur de la fenêtre.
+- **activityMonitor.ts**: EN: Tracks DOM interactions (mouse, keyboard, scroll) with throttling to detect user idle state. / FR: Suit les interactions DOM avec un bridage pour détecter l'état d'inactivité de l'utilisateur.
+- **networkMonitor.ts**: EN: Listens to online/offline network changes. / FR: Écoute les changements réseau en ligne/hors ligne.
+- **tabState.ts**: EN: Safely extracts the unified state across all monitors. / FR: Extrait en toute sécurité l'état unifié de tous les moniteurs.
 - **sessionTracker.ts**: EN: Orchestrates the session and creates domain events. / FR: Orchestre la session et crée les événements métier.
 - **eventBus.ts**: EN: Pub/sub decoupling mechanism. / FR: Mécanisme de découplage pub/sub.
 
