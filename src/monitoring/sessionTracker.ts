@@ -3,11 +3,8 @@ import { MonitoringEvent, EventType, EventSource } from './eventTypes';
 import { getTabState } from './tabState';
 import { visibilityMonitor } from './visibilityMonitor';
 import { configManager } from '../config';
-
-// EN: Temporary imports until Step 7
-// FR: Imports temporaires en attendant l'Étape 7
-const generateIdTemp = () => typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2);
-const getCurrentTimestampTemp = () => Date.now();
+import { generateId } from '../utils/id';
+import { getCurrentTimestamp } from '../utils/clock';
 
 /**
  * EN: Tracks the current monitoring session and generates events.
@@ -26,8 +23,8 @@ export class SessionTracker {
     const config = configManager.get();
     if (!config.monitoring.enabled) return;
 
-    this.sessionId = generateIdTemp();
-    this.lastEventTime = getCurrentTimestampTemp();
+    this.sessionId = generateId();
+    this.lastEventTime = getCurrentTimestamp();
     const { visibilityState } = getTabState();
     this.lastVisibilityState = visibilityState;
 
@@ -95,7 +92,7 @@ export class SessionTracker {
   private emitEvent(eventType: EventType, source: EventSource): void {
     if (!this.sessionId) return;
 
-    const now = getCurrentTimestampTemp();
+    const now = getCurrentTimestamp();
     const { visibilityState, hidden } = getTabState();
     
     // EN: For demo source, we might need to override the physical tab state
@@ -106,7 +103,7 @@ export class SessionTracker {
     const durationSincePreviousMs = this.lastEventTime ? now - this.lastEventTime : null;
 
     const event: MonitoringEvent = {
-      eventId: generateIdTemp(),
+      eventId: generateId(),
       sessionId: this.sessionId,
       eventType,
       visibilityState: actualVisibilityState,
