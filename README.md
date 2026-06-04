@@ -6,18 +6,25 @@ FR: Un projet complet, orienté production, pour détecter les transitions hidde
 ## EN: Features / FR: Fonctionnalités
 - EN: Page Visibility API tracking (visible, hidden, pagehide, beforeunload).
 - FR: Suivi via la Page Visibility API (visible, hidden, pagehide, beforeunload).
+
 - EN: Window Focus tracking (focus, blur).
 - FR: Suivi du focus de la fenêtre (focus, blur).
+
 - EN: User Activity tracking (idle detection after 60s of inactivity via mouse/keyboard/scroll).
 - FR: Suivi de l'activité utilisateur (détection d'inactivité après 60s via souris/clavier/défilement).
+
 - EN: Network Status tracking (online, offline).
 - FR: Suivi du statut réseau (en ligne, hors ligne).
+
 - EN: In-memory, LocalStorage, and IndexedDB storage layers.
 - FR: Couches de stockage en mémoire, LocalStorage et IndexedDB.
+
 - EN: JSON and CSV data export functionality.
 - FR: Fonctionnalité d'export de données JSON et CSV.
+
 - EN: Simulation dev/demo mode.
 - FR: Mode de simulation dev/démo.
+
 - EN: Clean React/Vite Dashboard.
 - FR: Dashboard propre avec React/Vite.
 
