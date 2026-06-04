@@ -9,6 +9,10 @@ export interface AppConfig {
     capturePageHide: boolean;
     captureBeforeUnload: boolean;
     deduplicateTransitions: boolean;
+    captureFocus: boolean;
+    captureIdle: boolean;
+    captureNetwork: boolean;
+    idleTimeoutMs: number;
   };
   storage: {
     adapter: 'memory' | 'localStorage' | 'indexedDB';

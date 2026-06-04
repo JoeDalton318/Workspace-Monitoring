@@ -15,6 +15,10 @@ export const bootstrap = async (): Promise<void> => {
       capturePageHide: true,
       captureBeforeUnload: true,
       deduplicateTransitions: true,
+      captureFocus: true,
+      captureIdle: true,
+      captureNetwork: true,
+      idleTimeoutMs: 60000,
     },
     app: {
       name: import.meta.env.VITE_APP_NAME || 'Workspace Monitoring',
@@ -22,7 +26,7 @@ export const bootstrap = async (): Promise<void> => {
     }
   };
 
-  configManager.update(envConfig);
+  configManager.update(envConfig as any);
 
   // EN: Start runtime orchestration
   // FR: Démarrer l'orchestration du runtime

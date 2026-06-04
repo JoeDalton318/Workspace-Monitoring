@@ -26,9 +26,15 @@ describe('SessionTracker', () => {
 
   it('EN: should simulate transition / FR: devrait simuler une transition', () => {
     sessionTracker.startSession();
-    sessionTracker.simulateTransition('hidden');
+    sessionTracker.simulateTransition('page_hidden');
     expect(publishedEvents.length).toBe(2);
     expect(publishedEvents[1].eventType).toBe('page_hidden');
     expect(publishedEvents[1].source).toBe('demo');
+    
+    // EN: Verify enriched properties exist
+    // FR: Vérifier que les propriétés enrichies existent
+    expect(publishedEvents[1].hasFocus).toBeDefined();
+    expect(publishedEvents[1].isIdle).toBeDefined();
+    expect(publishedEvents[1].isOnline).toBeDefined();
   });
 });

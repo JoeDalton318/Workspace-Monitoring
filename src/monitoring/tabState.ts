@@ -1,21 +1,34 @@
+import { activityMonitor } from './activityMonitor';
+
+export interface TabState {
+  visibilityState: 'visible' | 'hidden';
+  hidden: boolean;
+  hasFocus: boolean;
+  isIdle: boolean;
+  isOnline: boolean;
+}
+
 /**
- * EN: Utility to safely read browser visibility state.
- * FR: Utilitaire pour lire l'état de visibilité du navigateur de façon sûre.
+ * EN: Safely extracts current tab state (visibility, focus, idle, network).
+ * FR: Extrait l'état actuel de l'onglet en toute sécurité.
  */
-export const getTabState = (): { visibilityState: DocumentVisibilityState; hidden: boolean } => {
-  // EN: Handle cases where window or document might not exist (e.g., SSR or tests)
-  // FR: Gérer les cas où window ou document pourraient ne pas exister (ex: SSR ou tests)
-  if (typeof document !== 'undefined') {
-    return {
-      visibilityState: document.visibilityState,
-      hidden: document.hidden,
-    };
-  }
+export const getTabState = (): TabState => {
+  const isDocHidden = typeof document !== 'undefined' ? document.hidden : false;
   
-  // EN: Fallback for non-browser environments
-  // FR: Secours pour les environnements non-navigateur
+  let visState: 'visible' | 'hidden' = 'visible';
+  if (typeof document !== 'undefined') {
+    if (document.visibilityState === 'hidden' || document.visibilityState === 'visible') {
+      visState = document.visibilityState;
+    } else {
+      visState = isDocHidden ? 'hidden' : 'visible';
+    }
+  }
+
   return {
-    visibilityState: 'visible',
-    hidden: false,
+    visibilityState: visState,
+    hidden: isDocHidden,
+    hasFocus: (typeof document !== 'undefined' && typeof document.hasFocus === 'function') ? document.hasFocus() : true,
+    isIdle: activityMonitor.getIsIdle(),
+    isOnline: (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true,
   };
 };

@@ -11,6 +11,10 @@ export const defaultConfig: AppConfig = {
     capturePageHide: true,
     captureBeforeUnload: true,
     deduplicateTransitions: true,
+    captureFocus: true,
+    captureIdle: true,
+    captureNetwork: true,
+    idleTimeoutMs: 60000,
   },
   storage: {
     adapter: 'memory',
