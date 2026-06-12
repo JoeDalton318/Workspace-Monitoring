@@ -23,9 +23,19 @@ FR: Contrôle les événements simulés pour toutes les dimensions suivies.
 import { demoController } from './demo/demoController';
 // Visibility: 'page_visible', 'page_hidden'
 // Focus: 'page_focus', 'page_blur'
-// Activity: 'user_active', 'user_idle'
-// Network: 'network_online', 'network_offline'
-demoController.simulateEvent('page_blur');
+// Activity: 'user_active', 'user_idle', 'paste_event', 'large_code_insertion', 'shortcut_detected'
+// Network: 'network_online', 'network_offline', 'network_ip_change', 'location_change', 'external_monitor_detected'
+// Fullscreen: 'fullscreen_enter', 'fullscreen_exit'
+// Proctoring: 'proctoring_webcam_snapshot', 'proctoring_screen_start'
+// Security: 'invisible_ai_app_detected', 'plagiarism_detected', 'risk_level_updated'
+demoController.startDemo();
+```
+
+## Events and Metadata
+EN: New event types include `fullscreen_enter` and `fullscreen_exit`.
+FR: Les nouveaux types d'événements incluent `fullscreen_enter` et `fullscreen_exit`.
+EN: Metadata fields: `fullscreenElementTag` and `fullscreenEnabled`.
+FR: Champs metadata : `fullscreenElementTag` and `fullscreenEnabled`.
 ```
 
 ## exportService
