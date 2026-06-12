@@ -13,7 +13,15 @@ export interface AppConfig {
     captureIdle: boolean;
     captureNetwork: boolean;
     idleTimeoutMs: number;
+    captureFullscreen: boolean;
   };
+  identity: { enabled: boolean; };
+  network: { enabled: boolean; };
+  plagiarism: { enabled: boolean; };
+  proctoring: { enabled: boolean; };
+  activity: { enabled: boolean; };
+  desktopApp: { enabled: boolean; };
+  riskAggregation: { enabled: boolean; };
   storage: {
     adapter: 'memory' | 'localStorage' | 'indexedDB';
     maxEvents: number;
@@ -27,11 +35,14 @@ export interface AppConfig {
     enabled: boolean;
     autoSimulate: boolean;
     defaultPattern: string;
+    simulateFullscreen: boolean;
   };
   ui: {
     theme: 'light' | 'dark' | 'system';
     showRawEvents: boolean;
     maxTimelineItems: number;
+    showFullscreenStatus: boolean;
+    showFullscreenFilter: boolean;
   };
   logging: {
     level: 'debug' | 'info' | 'warn' | 'error';
